@@ -1,0 +1,6 @@
+# Configuración de docker
+docker-compose.yml
+docker
+
+#Configuracion BBDD local
+src/config.php
