@@ -53,7 +53,7 @@ body {
 .article .image{
     width: 400px;
     height: 280px;
-    background-color: green;
+    background-color: #a3bad2;
     margin: 10px auto;
 }
 .article .image img {
