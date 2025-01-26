@@ -32,7 +32,7 @@ if ($result->num_rows > 0) {
 <html>
 <head>
 <title>PetCrash Shop</title>
-<link rel="stylesheet" href="resources/style.css">
+<link rel="stylesheet" href="resources/style.css?v=1.0">
 </head>
 <body>
     <div class="container">
