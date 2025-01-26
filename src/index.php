@@ -39,6 +39,9 @@ if ($result->num_rows > 0) {
         <div class="header">
             <div class="title">
                 <h1>PetCrash Shop</h1>
+                <div class="menu-button">
+                    <img class="img-menu" src="resources/images/button-menu.gif" />
+                </div>
             </div>
         </div>
         <?php 
@@ -71,9 +74,11 @@ if ($result->num_rows > 0) {
         <?php } ?>
         </div>
     </div>
-    <div class="footer">
-        <span>Si te interesa algún artículo puedes contactar a través del WhatsApp 616285711</span>
-    </div>
-</body>
-
-</html> 
+<?php
+$script = '
+$(".img-menu").on("click", function(){
+    $(".menu").toggleClass("show");
+});
+';
+include_once "templates/footer.php";
+?>

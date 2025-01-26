@@ -15,6 +15,7 @@ body {
 .header {
     height: 70px;
     background-color: #112236;
+    
 }
 .title {
     width: 300px;
@@ -26,6 +27,12 @@ body {
     margin: 0;
     padding-top: 15px;
     color: #ffffff;
+    float: left;
+}
+.menu-button {
+    float: right;
+    margin-top: 10px;
+    display: none;
 }
 
 /*Productos*/
@@ -128,6 +135,7 @@ body {
 
 /*Filtro*/
 .container-nav-filter {
+    max-width: 680px;
     width: max-content;
     background-color: #dbe4ed;
     margin: 0 auto;
@@ -157,4 +165,95 @@ body {
     margin: 15px auto;
     text-align: center;
     font-weight: 700;
+}
+
+@media screen and (max-width: 1780px) {
+    .content {
+        max-width: 1315px;
+    }
+}
+
+@media screen and (max-width: 1315px) {
+    .content {
+        max-width: 878px;
+    }
+
+    /* HEADER */
+    .menu-button {
+        display: block;
+    }
+
+    /* MENÚ */
+    .container-nav-var {
+        position: relative;
+        z-index: 22;
+    }
+    .menu {
+        background-color: red;
+        width: 200px;
+        margin: 0 auto;
+        margin-left: 58%;
+        position: absolute;
+        transition: width 2s;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.1s linear;
+    }
+
+    .show {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+    }
+    .item-menu {
+        float: none;
+        margin: 0;
+        border-radius: 0;
+        font-size: 20px;
+    }
+    .item-menu:hover {
+        -webkit-box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.71);
+        -moz-box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.71);
+        box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.71);
+    }
+    .active {
+        -webkit-box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.91);
+        -moz-box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.91);
+        box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.91);
+    }
+
+    /* FILTRO */
+    .container-nav-filter {
+        max-width: 700px;
+        padding: 10px 50px;
+        font-size: 20px;
+        text-align: center;
+    }
+    #filtrar {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 878px) {
+    .content {
+        max-width: 439px;
+    }
+
+    /* FILTRO */
+    .container-nav-filter {
+        max-width: 293px;
+        z-index: 1;
+    }
+    .menu-filter {
+        width: 100%;
+        position: relative;
+    }
+    #filtrar {
+        float: right;
+        margin-top: 10px;
+        position: absolute;
+        right: -15px;
+        bottom: 0px;
+    }
 }

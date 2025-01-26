@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
 }
 ?>
 <div class="container-nav-var">
-    <div class="menu">
+    <div id="menu" class="menu">
         <?php
         foreach($clases as $clase) {
         ?>
