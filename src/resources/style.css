@@ -35,6 +35,10 @@ body {
     display: none;
 }
 
+.contact-info {
+    position: relative;
+}
+
 /*Productos*/
 .content {
     max-width: 1780px;
@@ -161,7 +165,7 @@ body {
 }
 
 /*Footer*/
-.footer {
+.footer, .contact-info {
     margin: 15px auto;
     text-align: center;
     font-weight: 700;
@@ -182,6 +186,10 @@ body {
     .menu-button {
         display: block;
     }
+    .contact-info {
+        position: absolute;
+        width: 100%;
+    }
 
     /* MENÚ */
     .container-nav-var {
@@ -189,25 +197,41 @@ body {
         z-index: 22;
     }
     .menu {
-        background-color: red;
-        width: 200px;
+        width: 400px;
+        text-align: center;
         margin: 0 auto;
-        margin-left: 58%;
+        margin-left: 40%;
         position: absolute;
         transition: width 2s;
         visibility: hidden;
         opacity: 0;
         transition: visibility 0s, opacity 0.1s linear;
-    }
+    } 
     .item-menu {
         float: none;
         margin: 0;
         border-radius: 0;
         font-size: 20px;
     }
+    .item-menu:hover {
+        -webkit-box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.71);
+        -moz-box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.71);
+        box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.71);
+    }
+    .active {
+        -webkit-box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.91);
+        -moz-box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.91);
+        box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.91);
+    }
+    .show {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+    }
 
     /* FILTRO */
     .container-nav-filter {
+        margin-top: 60px;
         max-width: 700px;
         padding: 10px 50px;
         font-size: 20px;
@@ -243,6 +267,7 @@ body {
     /* MENU */
     .menu {
         width: 100%;
+        max-width: none;
         margin: 0 auto;
         margin-left: none;
         position: absolute;

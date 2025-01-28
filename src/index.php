@@ -32,7 +32,7 @@ if ($result->num_rows > 0) {
 <html>
 <head>
 <title>PetCrash Shop</title>
-<link rel="stylesheet" href="resources/style.css?v=1.1">
+<link rel="stylesheet" href="resources/style.css?v=1.2">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -45,6 +45,7 @@ if ($result->num_rows > 0) {
                 </div>
             </div>
         </div>
+        <div class="contact-info"><span>Si te interesa algún artículo puedes contactar a través del WhatsApp 616285711</span></div>
         <?php 
         include_once("templates/nav-bar.php"); 
         include_once("templates/nav-filter.php");
