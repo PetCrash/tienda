@@ -11,6 +11,7 @@ asort($tallaProduct);
             <label class="label-checkbox" for="<?php echo $tallProd; ?>"><?php echo $tallProd; ?></label>
             
         <?php } ?>
+            <br />
             <input type="submit" id="filtrar" value="Filtrar"/>
         </form>
     </div>

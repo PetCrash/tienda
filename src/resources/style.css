@@ -199,27 +199,11 @@ body {
         opacity: 0;
         transition: visibility 0s, opacity 0.1s linear;
     }
-
-    .show {
-        display: block;
-        visibility: visible;
-        opacity: 1;
-    }
     .item-menu {
         float: none;
         margin: 0;
         border-radius: 0;
         font-size: 20px;
-    }
-    .item-menu:hover {
-        -webkit-box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.71);
-        -moz-box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.71);
-        box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.71);
-    }
-    .active {
-        -webkit-box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.91);
-        -moz-box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.91);
-        box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.91);
     }
 
     /* FILTRO */
@@ -236,24 +220,73 @@ body {
 }
 
 @media screen and (max-width: 878px) {
+    /* PRODUCTOS */
     .content {
         max-width: 439px;
+    }
+    .article {
+        width: 100%;
+        margin: 15px 0px;
+        float: none;
+    }
+    .article .image{
+        width: 400px;
+        height: 280px;
+        background-color: #a3bad2;
+        margin: 10px auto;
+    }
+    .article .image img {
+        width: 400px;
+        height: 280px;
+    }
+
+    /* MENU */
+    .menu {
+        width: 100%;
+        margin: 0 auto;
+        margin-left: none;
+        position: absolute;
+        text-align: center;
+        transition: width 2s;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.1s linear;
+    }
+    .item-menu:hover {
+        -webkit-box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.71);
+        -moz-box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.71);
+        box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.71);
+    }
+    .active {
+        -webkit-box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.91);
+        -moz-box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.91);
+        box-shadow: inset 7px 10px 11px -10px rgba(17,34,54,0.91);
+    }
+    .show {
+        display: block;
+        visibility: visible;
+        opacity: 1;
     }
 
     /* FILTRO */
     .container-nav-filter {
+        width: 100%;
         max-width: 293px;
         z-index: 1;
+        padding: 20px;
     }
     .menu-filter {
         width: 100%;
         position: relative;
     }
     #filtrar {
-        float: right;
         margin-top: 10px;
-        position: absolute;
-        right: -15px;
-        bottom: 0px;
+    }
+    .article .image{
+        width: 95%;
+    }
+    .article .image img {
+        width: 100%;
+        height: 280px;
     }
 }

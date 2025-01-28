@@ -32,7 +32,8 @@ if ($result->num_rows > 0) {
 <html>
 <head>
 <title>PetCrash Shop</title>
-<link rel="stylesheet" href="resources/style.css?v=1.0">
+<link rel="stylesheet" href="resources/style.css?v=1.1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <div class="container">
