@@ -4,6 +4,9 @@ include_once("config.php");
 if(isset($_GET['page'])){
     $clase = $_GET['page'];
 }
+else {
+    $clase = "Zapatillas";
+}
 
 $tallas = array();
 if(isset($_POST['talla'])){
@@ -22,8 +25,15 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $product = $row;
         array_push($products, $product);
-        if(!in_array((int) $product["talla"], $tallaProduct)){
-            array_push($tallaProduct, (int) $product["talla"]);
+        if($product["clase"] == "Zapatillas" || $product["clase"] == "Chanclas"){
+            if(!in_array((int) $product["talla"], $tallaProduct)){
+                array_push($tallaProduct, (int) $product["talla"]);
+            }
+        }
+        else {
+            if(!in_array($product["talla"], $tallaProduct)){
+                array_push($tallaProduct, $product["talla"]);
+            }
         }
     }
 }
@@ -54,10 +64,12 @@ if ($result->num_rows > 0) {
         <?php
         foreach ($products as $product) {
             if(!empty($tallas) && !in_array((int) $product['talla'], $tallas)) {
-                continue;
+                if(!in_array($product['talla'], $tallas)){
+                    continue;
+                }
             }
         ?>
-            <div class="article">
+            <div class="article <?php if($product['clase'] != "Zapatillas" && $product['clase'] != "Chanclas"){ echo 'ropa';} ?>">
                 <div class="image">
                     <img src="<?php echo $product['url']; ?>" />
                 </div>

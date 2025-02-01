@@ -71,6 +71,15 @@ body {
     width: 400px;
     height: 280px;
 }
+.ropa {
+    height: 670px;
+}
+.ropa .image {
+    height: 500px;
+}
+.ropa .image img {
+    height: 500px;
+}
 .article .description {
     text-align: center;
     color: #112236;
@@ -252,16 +261,15 @@ body {
         width: 100%;
         margin: 15px 0px;
         float: none;
+        height: max-content;
     }
     .article .image{
-        width: 400px;
-        height: 280px;
+        width: 95%;
         background-color: #a3bad2;
         margin: 10px auto;
     }
     .article .image img {
-        width: 400px;
-        height: 280px;
+        width: 100%;
     }
 
     /* MENU */
@@ -306,12 +314,5 @@ body {
     }
     #filtrar {
         margin-top: 10px;
-    }
-    .article .image{
-        width: 95%;
-    }
-    .article .image img {
-        width: 100%;
-        height: 280px;
     }
 }
