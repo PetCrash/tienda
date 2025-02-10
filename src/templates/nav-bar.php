@@ -1,6 +1,5 @@
 <?php
-if (!empty($_GET))
-{
+if (!empty($_GET) && isset($_GET["page"])) {
     $page = $_GET['page'];
 }
 else {

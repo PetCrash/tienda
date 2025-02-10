@@ -18,7 +18,7 @@ body {
     
 }
 .title {
-    width: 300px;
+    width: 350px;
     margin: 0px auto;
     font-weight: 700;
     font-style: normal;
@@ -33,6 +33,16 @@ body {
     float: right;
     margin-top: 10px;
     display: none;
+}
+.button-login {
+    float: left;
+    width: 30px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.img-login, .img-loged {
+    width: 30px;
+    height: 30px;
 }
 
 .contact-info {
@@ -96,6 +106,16 @@ body {
 .price {
     font-size: 2em;
     text-align: right;
+}
+.button-editar {
+    width: 20px;
+    height: 20px;
+    float: right;
+}
+.button-editar .img-editar {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
 
 /* Menu */
@@ -173,11 +193,84 @@ body {
     font-weight: 700;
 }
 
+/* Login */
+.login-container {
+    background-color: #dbe4ed;
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    border-color: #112236;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    position: absolute;
+    left: 42%;
+    z-index: 50;
+    transition: width 2s;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s linear;
+}
+.login-container h2 {
+    margin-bottom: 20px;
+}
+.inputs {
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+.inputs input {
+    text-align: center;
+}
+.inputs #filtrar {
+    margin: 0;
+}
+.error {
+    font-size: 0.8em;
+    padding: 0 10px;
+    color: #b60808;
+}
+
+/* Menu User*/
+.menu-user-container {
+    width: 300px;
+    position: absolute;
+    top: 70px;
+    left: 45%;
+    transition: width 2s;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s linear;
+}
+.button-menu-user {
+    text-align: center;
+    font-weight: 700;
+    padding: 10px;
+    border-style: solid;
+    border-color: #112236;
+    border-width: 1px;
+}
+.menu-user-container a, .menu-user-container a:active {
+    display: block;
+    background-color: #436280;
+    text-decoration: none;
+    color: #dbe4ed;
+}
+.menu-user-container a:hover {
+    text-decoration: none;
+    color:#112236;
+    background-color:#a3bad2;
+}
+
 /*Footer*/
 .footer, .contact-info {
     margin: 15px auto;
     text-align: center;
     font-weight: 700;
+}
+.show {
+    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 @media screen and (max-width: 1780px) {
@@ -314,5 +407,11 @@ body {
     }
     #filtrar {
         margin-top: 10px;
+    }
+
+    /* Menu User */
+    .menu-user-container {
+        width: 100%;
+        left: 0;
     }
 }
