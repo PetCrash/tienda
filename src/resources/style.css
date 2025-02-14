@@ -273,6 +273,59 @@ body {
     opacity: 1;
 }
 
+/* Informe ventas */
+.container-paid, .container-liquidated, .container-non-liquidated {
+    background-color: #dbe4ed;
+    border-color: #112236;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    width: 45%;
+    padding: 0 20px 10px;
+    float: left;
+    margin: 5px 10px;
+}
+.row-product:hover {
+    background-color: #a3bad2;
+}
+.titulo:hover {
+    background-color: #dbe4ed;
+}
+.container-paid h3, .container-liquidated h3, .container-non-liquidated h3 {
+    margin: 10px 30px;
+}
+.title-content {
+    text-align: left;
+    padding-left: 50px;
+}
+.row-product {
+    clear: both;
+    height: 20px;
+    padding: 5px 0;
+    border-bottom: 1px solid #436280;
+}
+.row-product .products{
+    float: left;
+}
+.product-id {
+    width: 10%;
+}
+.product-name {
+    width: 50%;
+}
+.product-price {
+    width: 10%;
+}
+.product-size {
+    width: 10%;
+}
+.product-client {
+    width: 20%;
+}
+.negrita {
+    font-weight: 700;
+}
+
 @media screen and (max-width: 1780px) {
     .content {
         max-width: 1315px;
@@ -329,6 +382,13 @@ body {
         display: block;
         visibility: visible;
         opacity: 1;
+    }
+    
+    /* Informe ventas */
+    .container-paid, .container-liquidated, .container-non-liquidated {
+        width: 90%;
+        padding: 0 20px 10px;
+        float: none;
     }
 
     /* FILTRO */
