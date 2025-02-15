@@ -14,6 +14,7 @@ else {
     $clase = "Zapatillas";
 }
 
+/* LOGIN */
 if(isset($_POST["ingresar"])){
     $name = $_POST["user"];
     $password = sha1($_POST["password"]);
@@ -26,6 +27,27 @@ if(isset($_POST["ingresar"])){
     }
     else {
         $errorLogin = 1;
+    }
+}
+
+/* Editar producto */
+if(isset($_POST["edit-submit"])){
+    $id = $_POST['id'];
+    $nombre = $_POST['nombre'];
+    if(!empty($_POST['color'])){ $color = $_POST['color'];} else {$color = null;}
+    if(!empty($_POST['vendendor'])){ $vendendor = $_POST['vendendor'];} else {$vendendor = null;}
+    if(!empty($_POST['cliente'])){ $cliente = $_POST['cliente'];} else {$cliente = null;}
+    if(isset($_POST['vendido'])){ $vendido = $_POST['vendido'];} else {$vendido = 0;}
+    if(isset($_POST['pagado-cliente'])){ $pagadoCliente = $_POST['pagado-cliente'];} else {$pagadoCliente = 0;}
+    if(isset($_POST['pagado-fernando'])){ $pagadoFernando = $_POST['pagado-fernando'];} else {$pagadoFernando = 0;}
+    $query = "UPDATE producto SET nombre = '{$nombre}', vendido = '{$vendido}', pagada_cliente = '{$pagadoCliente}', pagada_fernando = '{$pagadoFernando}'";
+    if(!empty($color)){ $query .= ", color = '{$color}'";}
+    if(!empty($vendendor)){ $query .= ", vendendor = '{$vendendor}'";}
+    if(!empty($cliente)){ $query .= ", cliente = '{$cliente}'";}
+    $query .= " WHERE id = {$id}";
+    $dbConn->query($query);
+    if(isset($_POST['url'])){
+        header('Location: '.$_POST['url']);
     }
 }
 
@@ -63,7 +85,7 @@ $web = "tienda";
 <html>
 <head>
 <title>PetCrash Shop</title>
-<link rel="stylesheet" href="resources/style.css?v=1.4">
+<link rel="stylesheet" href="resources/style.css?v=1.5">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -90,6 +112,7 @@ $web = "tienda";
         include_once("templates/menu-user.php");
         include_once("templates/nav-bar.php"); 
         include_once("templates/nav-filter.php");
+        include_once("templates/edit-container.php");
         ?>
         <div class="content">
         <?php
@@ -108,7 +131,7 @@ $web = "tienda";
                     <h3><?php echo $product['nombre']; ?></h3>
                     <div class="text">
                         <?php if(isset($_SESSION['id_user'])){ ?>
-                        <div class="button-editar"><img class="img-editar" src="resources/images/editar.png" /></div>
+                        <div class="button-editar"><img class="img-editar" id="<?php echo $product['id']; ?>" src="resources/images/editar.png" /></div>
                         <?php } ?>
                         <span><?php echo $product['color']; ?></span><br />
                         <span>Talla: <?php echo $product['talla']; ?></span><br />

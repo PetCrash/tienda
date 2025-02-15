@@ -174,7 +174,7 @@ body {
     margin: 0 auto;
     padding: 10px 50px;
 }
-#filtrar {
+#filtrar, .edit-submit {
     background-color: #436280;
     border-color: #112236;
     border-width: 1px;
@@ -267,11 +267,6 @@ body {
     text-align: center;
     font-weight: 700;
 }
-.show {
-    display: block;
-    visibility: visible;
-    opacity: 1;
-}
 
 /* Informe ventas */
 .container-paid, .container-liquidated, .container-non-liquidated {
@@ -324,6 +319,100 @@ body {
 }
 .negrita {
     font-weight: 700;
+}
+
+/* Editar productos */
+.container-edit-product {
+    width: 600px;
+    height: 370px;
+    position: fixed;
+    left: 30%;
+    top: 100px;
+    display: none;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+}
+.iframe-edit {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+}
+.container-edit {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.campo-edit {
+    margin: 10px 0px;
+}
+.span-input-text {
+    display: inline-block;
+    width: 80px;
+    height: 20px;
+}
+.span-checkbox {
+    display: inline-block;
+    width: 200px;
+    height: 20px;
+}
+.input-nombre {
+    width: 300px;
+}
+.buton-edit {
+    text-align: center;
+    margin-top: 30px;
+}
+.img-cerrar {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 20px;
+    right: 20px;
+}
+
+/* Botón SI/NO CSS externo */
+:root {
+    --color-green: #00aa2b;
+    --color-red: #b60808;
+    --color-button: #dbe4ed;
+    --color-black: #112236;
+}
+.switch-button {
+    display: inline-block;
+}
+.switch-button .switch-button__checkbox {
+    display: none;
+}
+.switch-button .switch-button__label {
+    background-color: var(--color-red);
+    width: 40px;
+    height: 20px;
+    border-radius: 3rem;
+    display: inline-block;
+    position: relative;
+}
+.switch-button .switch-button__label:before {
+    transition: .2s;
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-button);
+    content: '';
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 0px 1px var(--color-black);
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label {
+    background-color: var(--color-green);
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label:before {
+    transform: translateX(15px);
+}
+.show {
+    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 @media screen and (max-width: 1780px) {
@@ -403,6 +492,14 @@ body {
         margin-left: 0;
         margin-top: 20px;
     }
+    /* Editar productos */
+    .container-edit-product {
+        width: 600px;
+        height: 370px;
+        position: fixed;
+        left: 20%;
+        top: 100px;
+    }
 }
 
 @media screen and (max-width: 878px) {
@@ -473,5 +570,13 @@ body {
     .menu-user-container {
         width: 100%;
         left: 0;
+    }
+    /* Editar productos */
+    .container-edit-product {
+        width: 100%;
+        height: 370px;
+        position: relative;
+        left: 0%;
+        top: 0px;
     }
 }

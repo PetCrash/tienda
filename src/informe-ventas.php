@@ -46,6 +46,7 @@ $web = "informes";
         <?php 
         include_once("templates/login.php");
         include_once("templates/menu-user.php");
+        include_once("templates/edit-container.php");
         ?>
         <div class="content">
             <div class="title-content">
@@ -69,6 +70,7 @@ $web = "informes";
                         <div class="products product-size"><?php echo $product["talla"]; ?></div>
                         <div class="products product-price"><?php echo number_format($product["precio"], 2); ?>€</div>
                         <div class="products product-client"><?php echo $product["cliente"]; ?></div>
+                        <div class="button-editar"><img class="img-editar" id="<?php echo $product['id']; ?>" src="resources/images/editar.png" /></div>
                     </div>
                 <?php } ?>
             </div>
@@ -91,6 +93,7 @@ $web = "informes";
                         <div class="products product-size"><?php echo $product["talla"]; ?></div>
                         <div class="products product-price"><?php echo number_format($product["precio"], 2); ?>€</div>
                         <div class="products product-client"><?php echo $product["cliente"]; ?></div>
+                        <div class="button-editar"><img class="img-editar" id="<?php echo $product['id']; ?>" src="resources/images/editar.png" /></div>
                     </div>
                 <?php    
                     }    
@@ -115,6 +118,7 @@ $web = "informes";
                         <div class="products product-size"><?php echo $product["talla"]; ?></div>
                         <div class="products product-price"><?php echo number_format($product["precio"], 2); ?>€</div>
                         <div class="products product-client"><?php echo $product["cliente"]; ?></div>
+                        <div class="button-editar"><img class="img-editar" id="<?php echo $product['id']; ?>" src="resources/images/editar.png" /></div>
                     </div>
                 <?php    
                     }    
