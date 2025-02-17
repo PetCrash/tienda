@@ -3,7 +3,6 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
     integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
-    <script src="<?php echo URL_BASE; ?>/resources/script.js"></script>
 <?php
 $script = '
 $(".img-menu").on("click", function(){
@@ -21,11 +20,12 @@ $(".img-cerrar").on("click", function(){
 $(".img-editar").on("click", function(){
     $(".container-edit-product").toggleClass("show");
 });
+var URL_BASE = "'.URL_BASE.'";
 ';
 if (isset($script)) {
     echo "<script>$script</script>";
 }
 ?>
-
+<script src="<?php echo URL_BASE; ?>/resources/script.js"></script>
 </body>
 </html> 
