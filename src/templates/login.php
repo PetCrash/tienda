@@ -1,5 +1,5 @@
 <div class="login-container <?php if(isset($errorLogin)){echo 'show';} ?>">
-    <form action="<?php echo URL_BASE ?>" method="post">
+    <form action="<?php echo URL_BASE ?>/index.php" method="post">
         <h2>Ingresar</h2>
         <div class="inputs">
             <span>Usuario</span>
