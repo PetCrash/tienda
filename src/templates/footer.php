@@ -20,6 +20,12 @@ $(".img-cerrar").on("click", function(){
 $(".img-editar").on("click", function(){
     $(".container-edit-product").toggleClass("show");
 });
+$(".img-cerrar-info").on("click", function(){
+    $(".container-info-product").toggleClass("show");
+});
+$(".img-info").on("click", function(){
+    $(".container-info-product").toggleClass("show");
+});
 var URL_BASE = "'.URL_BASE.'";
 ';
 if (isset($script)) {

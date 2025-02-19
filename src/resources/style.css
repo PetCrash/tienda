@@ -107,12 +107,13 @@ body {
     font-size: 2em;
     text-align: right;
 }
-.button-editar {
+.button-editar, .button-info {
     width: 20px;
     height: 20px;
     float: right;
+    margin-right: 10px;
 }
-.button-editar .img-editar {
+.button-editar .img-editar, .button-info .img-info {
     width: 20px;
     height: 20px;
     cursor: pointer;
@@ -269,7 +270,7 @@ body {
 }
 
 /* Informe ventas */
-.container-paid, .container-liquidated, .container-non-liquidated {
+.container-paid, .container-liquidated, .container-non-liquidated, .container-pedro-commission {
     background-color: #dbe4ed;
     border-color: #112236;
     border-width: 1px;
@@ -314,11 +315,34 @@ body {
 .product-size {
     width: 10%;
 }
-.product-client {
-    width: 20%;
+.total-vendido, .commission, .total-commission {
+    width: 30%;
 }
+
 .negrita {
     font-weight: 700;
+}
+
+/* Info productos vendidos */
+.container-info-product {
+    width: 300px;
+    height: 220px;
+    position: fixed;
+    left: 40%;
+    top: 100px;
+    display: none;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+}
+.container-info {
+    padding: 50px 30px 0;
+}
+.info-product {
+    padding: 10px;
+    border-bottom-style: solid;
+    border-width: 1px;
 }
 
 /* Editar productos */
@@ -334,7 +358,7 @@ body {
     border-style: solid;
     border-radius: 10px;
 }
-.iframe-edit {
+.iframe-edit, .iframe-info {
     border-width: 1px;
     border-style: solid;
     border-radius: 10px;
@@ -363,7 +387,7 @@ body {
     text-align: center;
     margin-top: 30px;
 }
-.img-cerrar {
+.img-cerrar, .img-cerrar-info {
     position: absolute;
     width: 20px;
     height: 20px;

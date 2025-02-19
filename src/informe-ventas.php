@@ -10,12 +10,18 @@ $dbConn = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
 $query = "SELECT * from producto WHERE vendido = 1";
 $result = $dbConn->query($query);
 $productsPaid = array();
+$totalVendidoPedro = 0;
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $product = $row;
         array_push($productsPaid, $product);
+        if($row['vendedor'] == "Pedro"){
+            $totalVendidoPedro += $row['precio'];
+        }
     }
 }
+$commission = 20;
+$totalCommission = $totalVendidoPedro * ($commission/100);
 $web = "informes";
 ?>
 <!DOCTYPE html>
@@ -47,6 +53,7 @@ $web = "informes";
         include_once("templates/login.php");
         include_once("templates/menu-user.php");
         include_once("templates/edit-container.php");
+        include_once("templates/info-container.php");
         ?>
         <div class="content">
             <div class="title-content">
@@ -59,7 +66,6 @@ $web = "informes";
                     <div class="products product-name">Nombre</div>
                     <div class="products product-size">Talla</div>
                     <div class="products product-price">Precio</div>
-                    <div class="products product-client">Cliente</div>
                     </div>
                 <?php
                 foreach($productsPaid as $product){
@@ -69,8 +75,8 @@ $web = "informes";
                         <div class="products product-name"><?php echo $product["nombre"]; ?></div>
                         <div class="products product-size"><?php echo $product["talla"]; ?></div>
                         <div class="products product-price"><?php echo number_format($product["precio"], 2); ?>€</div>
-                        <div class="products product-client"><?php echo $product["cliente"]; ?></div>
                         <div class="button-editar"><img class="img-editar" id="<?php echo $product['id']; ?>" src="resources/images/editar.png" /></div>
+                        <div class="button-info"><img class="img-info" id="<?php echo $product['id']; ?>" src="resources/images/info.gif" /></div>
                     </div>
                 <?php } ?>
             </div>
@@ -81,7 +87,6 @@ $web = "informes";
                     <div class="products product-name">Nombre</div>
                     <div class="products product-size">Talla</div>
                     <div class="products product-price">Precio</div>
-                    <div class="products product-client">Cliente</div>
                     </div>
                 <?php
                 foreach($productsPaid as $product){
@@ -92,8 +97,8 @@ $web = "informes";
                         <div class="products product-name"><?php echo $product["nombre"]; ?></div>
                         <div class="products product-size"><?php echo $product["talla"]; ?></div>
                         <div class="products product-price"><?php echo number_format($product["precio"], 2); ?>€</div>
-                        <div class="products product-client"><?php echo $product["cliente"]; ?></div>
                         <div class="button-editar"><img class="img-editar" id="<?php echo $product['id']; ?>" src="resources/images/editar.png" /></div>
+                        <div class="button-info"><img class="img-info" id="<?php echo $product['id']; ?>" src="resources/images/info.gif" /></div>
                     </div>
                 <?php    
                     }    
@@ -106,7 +111,6 @@ $web = "informes";
                     <div class="products product-name">Nombre</div>
                     <div class="products product-size">Talla</div>
                     <div class="products product-price">Precio</div>
-                    <div class="products product-client">Cliente</div>
                     </div>
                 <?php
                 foreach($productsPaid as $product){
@@ -117,13 +121,30 @@ $web = "informes";
                         <div class="products product-name"><?php echo $product["nombre"]; ?></div>
                         <div class="products product-size"><?php echo $product["talla"]; ?></div>
                         <div class="products product-price"><?php echo number_format($product["precio"], 2); ?>€</div>
-                        <div class="products product-client"><?php echo $product["cliente"]; ?></div>
                         <div class="button-editar"><img class="img-editar" id="<?php echo $product['id']; ?>" src="resources/images/editar.png" /></div>
+                        <div class="button-info"><img class="img-info" id="<?php echo $product['id']; ?>" src="resources/images/info.gif" /></div>
                     </div>
                 <?php    
                     }    
                 } ?>
             </div>
+            <?php if($_SESSION['user_name'] == "Pedro"){ ?>
+
+            
+            <div class="container-pedro-commission">
+                <h3>Comisión de Pedro</h3>
+                <div class="row-product negrita titulo">
+                    <div class="products total-vendido">Total vendido</div>
+                    <div class="products commission">% Comisión</div>
+                    <div class="products total-commission">Total comisión</div>
+                </div>
+                <div class="row-product">
+                    <div class="products total-vendido"><?php echo number_format($totalVendidoPedro, 2); ?>€</div>
+                    <div class="products commission"><?php echo $commission; ?>%</div>
+                    <div class="products total-commission"><?php echo number_format($totalCommission, 2); ?>€</div>
+                </div>
+            </div>
+            <?php } ?>
         </div>
     </div>
 <?php
