@@ -28,7 +28,7 @@ $web = "informes";
 <html>
 <head>
 <title>PetCrash Shop</title>
-<link rel="stylesheet" href="resources/style.css?v=1.4">
+<link rel="stylesheet" href="resources/style.css?v=1.6">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>

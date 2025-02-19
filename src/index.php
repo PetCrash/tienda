@@ -85,7 +85,7 @@ $web = "tienda";
 <html>
 <head>
 <title>PetCrash Shop</title>
-<link rel="stylesheet" href="resources/style.css?v=1.5">
+<link rel="stylesheet" href="resources/style.css?v=1.6">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
