@@ -42,7 +42,7 @@ if(isset($_POST["edit-submit"])){
     if(isset($_POST['pagado-fernando'])){ $pagadoFernando = $_POST['pagado-fernando'];} else {$pagadoFernando = 0;}
     $query = "UPDATE producto SET nombre = '{$nombre}', vendido = '{$vendido}', pagada_cliente = '{$pagadoCliente}', pagada_fernando = '{$pagadoFernando}'";
     if(!empty($color)){ $query .= ", color = '{$color}'";}
-    if(!empty($vendendor)){ $query .= ", vendendor = '{$vendendor}'";}
+    if(!empty($vendendor)){ $query .= ", vendendor = '{$vendedor}'";}
     if(!empty($cliente)){ $query .= ", cliente = '{$cliente}'";}
     $query .= " WHERE id = {$id}";
     $dbConn->query($query);
