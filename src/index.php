@@ -35,14 +35,14 @@ if(isset($_POST["edit-submit"])){
     $id = $_POST['id'];
     $nombre = $_POST['nombre'];
     if(!empty($_POST['color'])){ $color = $_POST['color'];} else {$color = null;}
-    if(!empty($_POST['vendendor'])){ $vendendor = $_POST['vendendor'];} else {$vendendor = null;}
+    if(!empty($_POST['vendedor'])){ $vendedor = $_POST['vendedor'];} else {$vendedor = null;}
     if(!empty($_POST['cliente'])){ $cliente = $_POST['cliente'];} else {$cliente = null;}
     if(isset($_POST['vendido'])){ $vendido = $_POST['vendido'];} else {$vendido = 0;}
     if(isset($_POST['pagado-cliente'])){ $pagadoCliente = $_POST['pagado-cliente'];} else {$pagadoCliente = 0;}
     if(isset($_POST['pagado-fernando'])){ $pagadoFernando = $_POST['pagado-fernando'];} else {$pagadoFernando = 0;}
     $query = "UPDATE producto SET nombre = '{$nombre}', vendido = '{$vendido}', pagada_cliente = '{$pagadoCliente}', pagada_fernando = '{$pagadoFernando}'";
     if(!empty($color)){ $query .= ", color = '{$color}'";}
-    if(!empty($vendendor)){ $query .= ", vendendor = '{$vendedor}'";}
+    if(!empty($vendedor)){ $query .= ", vendedor = '{$vendedor}'";}
     if(!empty($cliente)){ $query .= ", cliente = '{$cliente}'";}
     $query .= " WHERE id = {$id}";
     $dbConn->query($query);

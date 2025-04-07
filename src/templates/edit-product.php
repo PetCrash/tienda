@@ -42,7 +42,7 @@ if ($result->num_rows > 0) {
             </div>
             <div class="campo-edit">
                 <span class="span-input-text">Vendedor:</span>
-                <input type="text" name="vendendor" value="<?php echo $product['vendedor'] ?>" />
+                <input type="text" name="vendedor" value="<?php echo $product['vendedor'] ?>" />
             </div>
             <div class="campo-edit">
                 <span class="span-input-text">Cliente:</span>
